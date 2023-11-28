@@ -88,8 +88,6 @@ apply_cat1(){
 
 apply_cat2(){
     title "Applying CAT2 STIGs not applied by OSCAP"
-    info "Removing aide package from local repo to prevent installation. Removed in 2.4.30"
-    logCmd "rm -f /nsm/repo/aide-0.16-100.el9.x86_64.rpm"
 
     title "Running custom OSCAP profile to remediate both CAT1 & CAT2 STIGs"
     logCmd "oscap xccdf eval --remediate --profile xccdf_org.ssgproject.content_profile_stig --results $stig_log/results.xml $stig_conf/SOS-ol9-ds-CAT1-CAT2.xml"
